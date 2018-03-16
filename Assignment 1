@@ -1,0 +1,30 @@
+Name: Neil Malu
+Computer Security - CS 419
+Assignment 1
+
+1.	How does authenticity differ from integrity in computer security?
+	
+	Integrity is ensuring that data and system resources are trustworthy, that they have not been accidently modified or made malicious by a threat. There are three types of integrity:
+	i.	Data integrity - Data manipulation is authorized and cannot be overridden
+	ii. Origin integrity - deals with authentication
+	iii. System integrity - ensures that a system is working as required
+
+	On the other hand authenticity is the special case of origin integrity where you make sure that a given entity with whom the system is interacting is who you believe it to be. Data was created by its purpoted author and not been forged by a third party.
+
+2.	What is pretexting?
+	
+	Pretexting is where a person or program pretends to be someone else to obtain priveleged or private data.
+
+3.	What is meant by assurance in the context of security?
+
+	Assurance is the amount of reliance you can place on a particular security mechanism
+
+4.	What is meant by a security theater?
+
+	Security theater refers to security measures that make people feel more secure but don't really do anything to improve their security. 
+
+5.	Many banks require employees to take mandatory vacations each year. This policy is described in the FDIC’s Vacation Policies document. Why does the FDIC recommend that bank employees take periodic vacations?
+
+	Periodic vacations are proven to be an effective internal safeguard in preventing fraud. They are also viewed as a benefit to employees and a valuable aid to the institution's training program. This is mainly because embezzlement of substantial amount requires the constant presence of an embezzler to manipulate records, respond to inquiries from customers and prevent detection. Periodic vacactions mitigates this threat.
+
+	

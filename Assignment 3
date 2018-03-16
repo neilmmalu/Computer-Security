@@ -1,0 +1,27 @@
+Name: Neil Malu
+Computer Security - CS 419
+Assignment 3
+
+1.	How does an off-by-one overflow that only allows changing a byte of the base pointer ( ebp or, on 64-bit systems, rbp) enable malicious code execution? (You can compile a small function with cc -S to look at the code generated for function entry and exit).
+
+	However, if the buffer is the first variable that is allocated on the stack, an off-by-one error can overwrite one byte of the saved frame pointer. If the frame pointer is modified, the function will still return normally. However, upon returning, the compiler pops the frame pointer from the stack to restore the saved value of the calling function’s frame pointer, which was corrupted by the buffer overflow. Now the program has a modified frame pointer.
+
+2.	What damage can heap-based buffer overflows do if they cannot change the instruction pointer?
+
+	 Buffer overflow will cause data to spill over into higher memory addresses above the buffer that may contain other variables. If the attacker knows the order in which variables are allocated, they could be overwritten. While these overwrites will not change a return address, they can change things such as filenames, lookup tables, or linked lists.
+
+3.	How can a printf format string read arbitrary stack data?
+
+	If there are not enough parameters passed to printf, the function does not know that: it assumes they are on the stack and will happily read whatever value is on the stack where it thinks the parameter should be. This gives an attacker the ability to read arbitrarily deep into the stack.
+
+4.	How does ASLR make buffer overflow attacks more difficult?
+
+	Address Space Layout Randomization (ASLR) is a technique that was developed to have the operating system’s program loader pick random starting points for the executable program, static data, heap, stack, and shared libraries. Since code and data resides in different locations each time the program runs, the attacker is not able to program buffer overflows with useful known addresses.
+
+5.	(a) What Linux command is used to assign capabilities?
+
+		setcap
+
+	(b) What does the cap_net_raw capability permit (see the capabilities man page)?
+
+		Use RAW and PACKET sockets and bind to any address for transparent proxying.

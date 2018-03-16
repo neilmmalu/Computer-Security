@@ -1,0 +1,29 @@
+Name:	Neil Malu
+		Dhruv Bhardwaj
+		Tomer Levy
+		Kiran Kurian
+
+Assignment 4
+
+stack1
+
+	Output:		0123456789
+				0123456789
+				0123456789
+				0123456789
+				0123456789
+				0123456789
+				0123
+				dcba
+
+	Explanation:
+		The buffer is of size 64. We overflow the buffer by adding 64 random bits and then we reach the location of the 'modified' variable. We then change that to the corresponding ASCII value to the hex number 0x61626364.
+		64 - d
+		63 - c
+		62 - b
+		61 - a
+		so we inject the characters 'dcba' after the input to get to that if condition
+
+stack4
+
+	Output:		

@@ -1,0 +1,37 @@
+Name: Neil Malu
+Computer Security - CS 419
+Assignment 2
+
+1.	To get access control matrices to scale better, the text states that the two main ways are “to compress the users and to compress the rights”.
+	(a)	What is meant by “compressing the users”?
+		Creating groups or roles to manage the priveleges of large sets of users simultaneously
+	(b) What is meant by “compressing the rights”?
+		Store the access control matrix either by columns(access control lists) or rows(capabilities, sometimes known as tickets)
+
+2.	What four deficiencies does the author point out with Unix ACLs? Write your answers briefly: one short sentence per deficiency.
+	
+	The four deficiencies are
+	(i)		The OS kernel runs as the supervisor and has unrestricted access to the whole machine, which means we cannot implement an audit trail file that the system administrator cannot modify.
+	(ii)	ACL's contain only names of users and not programs so we cannot implement access triples of (user, program, file)
+	(iii)	ACL's are not very good at expressing mutable state. Therefore managing stateful access rules is difficult and coult be hard to track down files of defunct users.
+	(iv)	Unix ACL only names one user. Older versions allow a process to hold only one group id at a time and force it to use a privileged program to access other groups; newer Unix systems put a process in all groups that the user is in.
+
+3.	How did Windows add support for capabilities via profiles?
+
+	Security policy is set by groups rather than for the system as a whole. Groups are intended to be the primary method for centralized configuration management and control (group policy overrides individual profiles). 
+
+4.	What is the purpose of the wheel group on BSD and macOS systems?
+
+	The root account is disabled but users who may administer the system are in a group 'wheel' that allows them to 'su' into 'root' (superuser). This then enables them to install programs.
+
+5.	(a) What is the simple security property of the Bell-LaPadula model? 
+		The simple secrutiy property is that no process may read data at a higher level. This is called "No read up" or NRU.
+
+	(b)	What is the *-property of the Bell-LaPadula model?
+		The *-property is that no process may write data to a lower level. This is called the "No Write Down" or NWD
+
+6.	What is meant by a role in a role-based access control (RBAC) system?
+
+	A role can be thought of as a set of transactions that a user or set of users can perform
+	within the context of an organization.
+
