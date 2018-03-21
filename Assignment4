@@ -42,6 +42,7 @@ format0
 	Output:	
 	
 	Explanation:
+		We just needed to format it to read 64 bytes, and then add the value we wanted to set target to, __.
 	
 	
 heap0
@@ -50,6 +51,9 @@ heap0
 	Output:	
 	
 	Explanation:
+		Similar to Stack4, we first inserted a random string in gdb mode to get the addresses of EIP, __, and the winner() function, __.
+		We then once again got the offset of EIP, __.
+		Finally we just insterd __ characters as input, followed by the address of the winnder() function.
 	
 
 stack5
