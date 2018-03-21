@@ -5,7 +5,7 @@ Name:	Neil Malu
 
 Assignment 4
 
-stack1
+stack1 (screenshot attached)
 
 	Output:		0123456789
 				0123456789
@@ -24,45 +24,46 @@ stack1
 		61 - a
 		so we inject the characters 'dcba' after the input to get to that if condition
 
-stack4
-	Input:
+stack4 (screenshot attached)
+	Input: python -c 'print "A"*76 + "\xf4\x83\x04\x08" | ./stack4
 	
-	Output:	
+	Output: code flow successfully changed
 	
 	Explanation:
-		To do this, we first need to find the address of the win() function, which is 
-		Then, we need to insert a long string in gdb mode, to find the address of EIP, 
-		From there we got the offset of EIP, 
-		After that, we just inserted __ characters as input, followed by the address of win().
+		To do this, we first need to find the address of the win() function, using objdump.
+		Then, we need to insert a long string in gdb mode, to find the address of EIP.
+		From there we got the offset of EIP, which is 76.
+		After that, we just inserted 76 characters as input, followed by the address of win().
 
 
-format0
-	Input:
+format0 (screenshot attached)
+	Input: python -c "print '%064d/xef/xbe/xad/xde'" | xargs ./format0
 	
-	Output:	
-	
-	Explanation:
-		We just needed to format it to read 64 bytes, and then add the value we wanted to set target to, __.
-	
-	
-heap0
-	Input:
-	
-	Output:	
+	Output:	you have hit the target correctly :)
 	
 	Explanation:
-		Similar to Stack4, we first inserted a random string in gdb mode to get the addresses of EIP, __, and the winner() function, __.
-		We then once again got the offset of EIP, __.
-		Finally we just insterd __ characters as input, followed by the address of the winnder() function.
+		We just needed to format it to read 64 bytes, and then add the value we wanted to set target to, deadbeef.
+	
+	
+heap0 (screenshot attached)
+	Input: ./heap0 `python -c 'print "A"*72 + "\x64\x86\x04\x08"'`
+	
+	Output:	data is at 0x804a008, fp is at 0x804a050
+		level passed
+	
+	Explanation:
+		Similar to Stack4, we first inserted a random string in gdb mode to get the addresses of EIP and the winner() function.
+		We then once again got the offset of EIP, 72.
+		Finally we just insterd 72 characters as input, followed by the address of the winner() function.
 	
 
-stack5
+stack5 (screenshot attached)
 	Input:
 	
 	Output:	
 	
 	Explanation:
-		We started by inputting a random string to get the address of EIP, __, and its offset, __.
-		After some testing to find out if we could insert more than __ characters as shellcode, we found there was a lot more space.
-		We decided to insert __ characters as input, concatenated with enough characters to reach the extra area in memory, concated with some NOPs to pad space, then the shellcode.
+		We started by inputting a random string to get the address of EIP, and its offset, 76.
+		After some testing to find out if we could insert more than 76 characters as shellcode, we found there was a lot more space.
+		We decided to insert 76 characters as input, concatenated with enough characters to reach the extra area in memory, concated with some NOPs to pad space, then the shellcode.
 	
