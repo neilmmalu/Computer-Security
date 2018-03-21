@@ -62,5 +62,7 @@ stack5
 	Output:	
 	
 	Explanation:
-	
+		We started by inputting a random string to get the address of EIP, __, and its offset, __.
+		After some testing to find out if we could insert more than __ characters as shellcode, we found there was a lot more space.
+		We decided to insert __ characters as input, concatenated with enough characters to reach the extra area in memory, concated with some NOPs to pad space, then the shellcode.
 	
