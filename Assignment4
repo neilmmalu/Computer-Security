@@ -25,5 +25,38 @@ stack1
 		so we inject the characters 'dcba' after the input to get to that if condition
 
 stack4
+	Input:
+	
+	Output:	
+	
+	Explanation:
+		To do this, we first need to find the address of the win() function, which is 
+		Then, we need to insert a long string in gdb mode, to find the address of EIP, 
+		From there we got the offset of EIP, 
+		After that, we just inserted __ characters as input, followed by the address of win().
 
-	Output:		
+
+format0
+	Input:
+	
+	Output:	
+	
+	Explanation:
+	
+	
+heap0
+	Input:
+	
+	Output:	
+	
+	Explanation:
+	
+
+stack5
+	Input:
+	
+	Output:	
+	
+	Explanation:
+	
+	
